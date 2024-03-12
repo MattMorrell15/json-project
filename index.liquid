@@ -2,3 +2,13 @@
 layout: layout.liquid
 title: 11ty Boilerplate
 ---
+<div> id="thumbnail"></div>
+<script>
+  function displayHTML(string) {
+    const mainImage = document.getElementById('thumbnail');
+    mainImage.innerHTML = '<img alt="test" src ="${string}" />';
+  }
+  fetch('https://dummyjson.com/products/1')
+    .then(res => res.json())
+    .then(json => displayHTML(json.thumbnail))
+</script>
