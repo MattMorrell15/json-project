@@ -2,7 +2,19 @@
 layout: layout.liquid
 title: 11ty Boilerplate
 ---
-<div> id="thumbnail"></div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11ty Boilerplate</title>
+  <link rel="stylesheet" href="/styles/screen.css">
+  <script deter src="https://cdn.jsdelivr.net/gh/hankhank10/alpine-fetch@main/alpine-fetch.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+  <div> id="thumbnail"></div>
 <script>
   function displayHTML(string) {
     const mainImage = document.getElementById('thumbnail');
@@ -12,3 +24,5 @@ title: 11ty Boilerplate
     .then(res => res.json())
     .then(json => displayHTML(json.thumbnail))
 </script>
+</body>
+</html>
